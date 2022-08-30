@@ -1,0 +1,123 @@
+[8:35 p. m., 23/9/2021] Gabriel 🌐: #include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    enum menu { CONFIGURACION=1, SIMULACION, SALIR};
+    int opc,velocidad,limpiaparabrisas;
+
+    char sensor;
+    char si = 'S';
+    char no = 'N';
+    do
+    {
+        printf("\nMenu de Opciones:\n");
+        printf("\nElija una opcion: \n\n");
+        printf("1) Configuracion\n");
+        printf("2) Simulacion \n");
+        printf("3) SALIR \n");
+        scanf ("%d",&opc);
+
+        switch (opc)
+
+        {
+
+        case CONFIGURACION:
+            printf ("Usted esta en Configuracion\n");
+            printf ("Desea habilitar el sensor? Coloque S o N(S/N S=SI / N=NO)\n");
+            scanf (" %c",&sensor);
+            if (sensor == si)
+            {
+                printf ("Indique la Velocidad deseada\n")…
+[4:25 p. m., 25/9/2021] Gabriel 🌐: #include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    enum menu { CONFIGURACION=1, SIMULACION, SALIR};
+    int opc,velocidad;
+
+    char sensor,limpiaparabrisas,llueve;
+
+    do
+    {
+        printf("\n BIENVENIDO AL SENSOR DE LLUVIA:\n");
+        printf("\nElija una opcion: \n\n");
+        printf("1) Configuracion del sensor\n");
+        printf("2) Simulacion del sensor \n");
+        printf("3) SALIR \n");
+        scanf ("%d",&opc);
+
+        switch (opc)
+
+        {
+
+        case CONFIGURACION:
+            printf ("Usted esta en Configuracion\n");
+            printf ("Desea habilitar el sensor? Coloque S o N(S/N S=SI / N=NO)\n");
+            scanf (" %c",&sensor);
+
+            if (sensor == 's' || sensor== 'S')
+            {
+                printf ("Indique la Velocidad deseada\n");
+                printf ("1=BAJA----2=MEDIA----3=ALTA\n");
+                scanf ("%d",&velocidad);
+                printf ("Se activo la velocidad %d\n",velocidad);
+                printf ("DESEA ACTIVAR EL LIMPIA PARABRISAS MANUAL? Coloque S o N(S/N S=SI / N=NO) \n");
+                scanf (" %c",&limpiaparabrisas);
+
+                if (limpiaparabrisas == 's'|| limpiaparabrisas =='S')
+                {
+                    printf ("Se activo el limpia parabrisas manualmente\n");
+                }
+                else if (limpiaparabrisas == 'n'|| limpiaparabrisas== 'N')
+
+                {
+                    printf ("El limpia parabrisa sigue automatico\n");
+                }
+            }
+            else if (sensor == 'n'||sensor=='N')
+
+            {
+                printf ("Usted no desea habilitar el sensor\n HASTA LUEGO\n");
+            }
+
+            break;
+        case SIMULACION:
+            printf ("ESTA LLOVIENDO AFUERA? Coloque S o N(S/N S=SI / N=NO) \n");
+            scanf(" %c",&llueve);
+            if (llueve== 's'||llueve=='S')
+
+            {
+
+                if ((sensor == 's' || sensor== 'S') && (limpiaparabrisas == 's'|| limpiaparabrisas =='S'))
+                {
+                    printf ("Se activo el limpia parabrisas a velocidad %d\n",velocidad);
+                }
+
+                else if ((sensor == 'n' || sensor== 'N') && (limpiaparabrisas == 'n'|| limpiaparabrisas =='N'))
+
+                {
+                    printf ("Primero debe configurar el sistema para simular\n");
+                }
+                if ((sensor == 's' || sensor== 'S') && (limpiaparabrisas == 'n'|| limpiaparabrisas =='N'))
+                {
+                    printf ("Se activo el limpia parabrisas automatico\n");
+                }
+
+            }
+            if (llueve== 'n'||llueve=='N')
+            {
+                printf ("No se activo el limpia parabrisas\n");
+            }
+            break;
+        case SALIR:
+printf("HASTA LUEGO\n");
+            break;
+
+        }
+
+    }
+    while (opc != 3);
+    return 0;
+}
